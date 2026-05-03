@@ -22,6 +22,8 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
+            /* Extra padding at the bottom so the sticky banner doesn't cover content */
+            padding-bottom: 80px; 
         }
 
         .blog-container {
@@ -144,6 +146,77 @@
         .social-links a.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .social-links a.ig:hover { opacity: 0.9; }
 
+        /* --- Smart App Banner CSS --- */
+        .smart-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .smart-banner-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .smart-banner-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .smart-banner-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .smart-banner-title {
+            font-size: 1em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .smart-banner-dev {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            margin: 0;
+            margin-top: 2px;
+        }
+
+        .smart-banner-btn {
+            background-color: #00b09b;
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 176, 155, 0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .smart-banner-btn:active {
+            transform: scale(0.95);
+        }
+
         @media (max-width: 600px) {
             .blog-container {
                 margin: 0;
@@ -161,6 +234,16 @@
             .btn-download {
                 width: 80%;
                 box-sizing: border-box;
+            }
+            .smart-banner {
+                padding: 10px 15px;
+            }
+        }
+        
+        @media (min-width: 800px) {
+            .smart-banner {
+                justify-content: center;
+                gap: 300px;
             }
         }
     </style>
@@ -209,6 +292,19 @@
             <a href="https://www.facebook.com/profile.php?id=61563644052310" target="_blank" class="fb">Facebook</a>
             <a href="https://www.instagram.com/singhdaleep504?igsh=MWE5a2JkeGowd3g2Zg==" target="_blank" class="ig">Instagram</a>
         </div>
+    </div>
+
+    <!-- Smart App Banner (Sticky Bottom) -->
+    <div class="smart-banner">
+        <div class="smart-banner-left">
+            <!-- You can replace the emoji with an actual image tag like <img src="your-icon-url.png" alt="Icon"> -->
+            <div class="smart-banner-icon">🎲</div>
+            <div class="smart-banner-info">
+                <p class="smart-banner-title">Ludo Online Multiplayer</p>
+                <p class="smart-banner-dev">Daleep Singh • Free</p>
+            </div>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.daleepsingh.ludomultiplayer" target="_blank" class="smart-banner-btn">INSTALL</a>
     </div>
 
 </body>
